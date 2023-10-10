@@ -1,15 +1,15 @@
-
+// book.js
 class Book {
-    constructor(id, title, description, authors, favorite, fileCover, fileName) {
-      this.id = id;
-      this.title = title;
-      this.description = description;
-      this.authors = authors;
-      this.favorite = favorite;
-      this.fileCover = fileCover;
-      this.fileName = fileName;
-    }
+  constructor(id, title, description, authors, favorite, fileCover, fileName, fileBook) {
+    this.id = id;
+    this.title = title;
+    this.description = description;
+    this.authors = authors;
+    this.favorite = favorite;
+    this.fileCover = fileCover;
+    this.fileName = fileName;
+    this.fileBook = fileBook; // Добавляем новое поле
   }
-  
-  module.exports = Book;
-  
+}
+
+module.exports = Book;
