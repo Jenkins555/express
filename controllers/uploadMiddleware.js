@@ -3,7 +3,7 @@ const multer = require('multer');
 // Настройки загрузки файлов
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, '../uploads/'); // Директория, куда будут сохраняться файлы 
+    path.join(__dirname, '../uploads', book.fileBook); // Директория, куда будут сохраняться файлы 
   },
   filename: (req, file, cb) => {
     cb(null, file.originalname); // Имя файла будет таким же, как исходное имя
