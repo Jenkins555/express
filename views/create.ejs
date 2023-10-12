@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Создание книги</title>
+</head>
+<body>
+    <h1>Создание книги</h1>
+    <form method="POST" action="/books">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" required></textarea>
+        <br>
+        <label for="authors">Автор(ы):</label>
+        <input type="text" id="authors" name="authors" required>
+        <br>
+        <label for="favorite">Избранное:</label>
+        <input type="checkbox" id="favorite" name="favorite">
+        <br>
+        <label for="fileCover">Обложка (URL):</label>
+        <input type="text" id="fileCover" name="fileCover">
+        <br>
+        <label for="fileName">Имя файла:</label>
+        <input type="text" id="fileName" name="fileName">
+        <br>
+        <label for="fileBook">Файл книги (URL):</label>
+        <input type="text" id="fileBook" name="fileBook">
+        <br>
+        <button type="submit">Создать книгу</button>
+    </form>
+</body>
+</html>

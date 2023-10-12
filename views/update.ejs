@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактирование книги</title>
+</head>
+<body>
+    <h1>Редактирование книги</h1>
+    <form method="POST" action="/books/<%= book.id %>">
+        <label for="title">Заголовок:</label>
+        <input type="text" id="title" name="title" value="<%= book.title %>" required>
+        <br>
+        <label for="description">Описание:</label>
+        <textarea id="description" name="description" required><%= book.description %></textarea>
+        <br>
+        <label for="authors">Автор(ы):</label>
+        <input type="text" id="authors" name="authors" value="<%= book.authors %>" required>
+        <br>
+        <label for="favorite">Избранное:</label>
+        <input type="checkbox" id="favorite" name="favorite" <% if (book.favorite) { %>checked<% } %>>
+        <br>
+        <label for="fileCover">Обложка (URL):</label>
+        <input type="text" id="fileCover" name="fileCover" value="<%= book.fileCover %>">
+        <br>
+        <label for="fileName">Имя файла:</label>
+        <input type="text" id="fileName" name="fileName" value="<%= book.fileName %>">
+        <br>
+        <label for="fileBook">Файл книги (URL):</label>
+        <input type="text" id="fileBook" name="fileBook" value="<%= book.fileBook %>">
+        <br>
+        <button type="submit">Сохранить изменения</button>
+    </form>
+</body>

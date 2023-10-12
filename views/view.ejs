@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Информация о книге</title>
+</head>
+<body>
+    <h1>Информация о книге</h1>
+    <h2><%= book.title %></h2>
+    <p><%= book.description %></p>
+    <p><%= book.authors %></p>
+    <p><%= book.favorite %></p>
+    <p><%= book.fileCover %></p>
+    <p><%= book.fileName %></p>
+    <p><%= book.fileBook %></p>
+    <a href="/books/<%= book.id %>/edit">Редактировать</a>
+</body>
+</html>

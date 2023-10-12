@@ -25,21 +25,21 @@ router.get('/:id', (req, res) => {
 
 // Создать новую книгу
 router.post('/', (req, res) => {
-    // Извлекаем данные из тела запроса
-    const { title, description, authors, favorite, fileCover, fileName } = req.body;
-  
-    // Генерируем уникальный ID на основе времени
-    const id = Date.now().toString();
-  
-    // Создаем новый экземпляр класса Book
-    const newBook = new Book(id, title, description, authors, favorite, fileCover, fileName);
-  
-    // Добавляем новую книгу в массив books
-    books.push(newBook);
-  
-    // Отправляем успешный ответ с созданным объектом книги
-    res.status(201).json(newBook);
-  });
+  // Извлекаем данные из тела запроса
+  const { title, description, authors, favorite, fileCover, fileName } = req.body;
+
+  // Генерируем уникальный ID на основе времени
+  const id = Date.now().toString();
+
+  // Создаем новый экземпляр класса Book
+  const newBook = new Book(id, title, description, authors, favorite, fileCover, fileName);
+
+  // Добавляем новую книгу в массив books
+  books.push(newBook);
+
+  // Отправляем успешный ответ с созданным объектом книги
+  res.status(201).json(newBook);
+});
 
 // Редактировать книгу по ID
 router.put('/:id', (req, res) => {
