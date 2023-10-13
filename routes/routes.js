@@ -20,6 +20,22 @@ router.get('/books/:id', (req, res) => {
     res.render('book/view', { book });
 });
 
+router.get('/books/create', (req, res) => {
+    res.render('book/create'); // Отображаем страницу создания книги
+});
+
+
+router.get('/books/:id/edit', (req, res) => {
+    const { id } = req.params;
+    const book = booksController.books.find((b) => b.id === id);
+    if (book) {
+        res.render('book/update', { book }); // Отображаем страницу редактирования книги
+    } else {
+        res.status(404).json({ message: 'Book not found' });
+    }
+});
+
+
 // Роут для создания данных о книге с загрузкой файла
 router.post('/', upload.single('fileBook'), (req, res) => {
     try {
