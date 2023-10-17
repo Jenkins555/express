@@ -14,6 +14,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: node controllers/counter.js
+    command: node controllers/counterController.js
     volumes:
       - ./uploads:/app/uploads

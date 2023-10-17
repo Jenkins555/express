@@ -7,6 +7,9 @@ const app = express();
 const booksController = require('./controllers/booksController');
 
 
+// Подключаем контроллер для работы со счетчиком
+const counterController = require('./controllers/counterController');
+
 // Используем маршруты для /api/counter
 app.use('/api/counter', counterController);
 
