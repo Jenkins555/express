@@ -6,6 +6,10 @@ const app = express();
 // Подключаем контроллер для работы с книгами
 const booksController = require('./controllers/booksController');
 
+
+// Используем маршруты для /api/counter
+app.use('/api/counter', counterController);
+
 // Разрешаем парсинг JSON
 app.use(express.json());
 
