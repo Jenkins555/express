@@ -2,17 +2,6 @@ const express = require('express');
 const app = express();
 
 
-
-// Подключаем контроллер для работы с книгами
-const booksController = require('./controllers/booksController');
-
-
-// Подключаем контроллер для работы со счетчиком
-const counterController = require('./controllers/counterController');
-
-// Используем маршруты для /api/counter
-app.use('/api/counter', counterController);
-
 // Разрешаем парсинг JSON
 app.use(express.json());
 

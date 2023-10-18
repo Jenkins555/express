@@ -4,6 +4,21 @@ const upload = require('../controllers/uploadMiddleware'); // Подключае
 const Book = require('../models/book');
 const path = require('path'); // Модуль для работы с путями к файлам
 
+const axios = require('axios');
+
+router.get('/:id/view', async (req, res) => {
+  const { id } = req.params;
+  const book = books.find((b) => b.id === id);
+  if (!book) {
+    res.status(404).json({ message: 'Book not found' });
+  } else {
+    // Отправляем POST-запрос для увеличения счетчика
+    await axios.post('http://counter-app/api/counter/' + id + '/incr');
+    res.json(book);
+  }
+});
+
+
 // Роут для создания данных о книге с загрузкой файла
 router.post('/', upload.single('fileBook'), (req, res) => {
   try {

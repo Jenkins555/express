@@ -1,19 +1,22 @@
+
+
 version: '3'
 services:
-  app:
+  books-app:
     build:
-      context: .
+      context: ./express
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
     volumes:
       - ./uploads:/app/uploads
     depends_on:
-      - counter
-  counter:
+      - counter-app
+  counter-app:
     build:
-      context: .
+      context: ./counter-app
       dockerfile: Dockerfile
-    command: node controllers/counterController.js
     volumes:
       - ./uploads:/app/uploads
+
+
