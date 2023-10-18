@@ -1,15 +1,18 @@
 // book.js
-class Book {
-  constructor(id, title, description, authors, favorite, fileCover, fileName, fileBook) {
-    this.id = id;
-    this.title = title;
-    this.description = description;
-    this.authors = authors;
-    this.favorite = favorite;
-    this.fileCover = fileCover;
-    this.fileName = fileName;
-    this.fileBook = fileBook; // Добавляем новое поле
-  }
-}
+const mongoose = require('mongoose');
+
+// Определение схемы "bookSchema"
+const bookSchema = new mongoose.Schema({
+  id: { type: String, required: true },
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  authors: { type: String, required: true },
+  favorite: { type: String, required: true },
+  fileCover: { type: String, required: true },
+  fileName: { type: String, required: true },
+});
+
+// Определение модели "Book" на основе схемы
+const Book = mongoose.model('Book', bookSchema);
 
 module.exports = Book;

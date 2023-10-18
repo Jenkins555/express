@@ -1,19 +1,12 @@
 version: '3'
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  mongodb:
+    image: mongo
+    container_name: my-mongodb
     ports:
-      - "3000:3000"
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 123
     volumes:
-      - ./uploads:/app/uploads
-    depends_on:
-      - counter
-  counter:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    command: node controllers/counterController.js
-    volumes:
-      - ./uploads:/app/uploads
+      - ./data:/data/db

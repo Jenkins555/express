@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-
+const path = require('path');
+const mongoose = require('./db'); // Подключаем Mongoos
 
 
 // Подключаем контроллер для работы с книгами
